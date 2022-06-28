@@ -1,4 +1,4 @@
-const endTime =new Date('2022-06-19 12:15:00').getTime()
+const endTime =new Date('2022-07-09 00:00:00').getTime()
 console.log(endTime)
 
 const spanD = document.querySelector('span.d');
@@ -9,17 +9,18 @@ const spanS = document.querySelector('span.s');
 setInterval(()=>{
     const nowTime = new Date().getTime()
     const time = endTime - nowTime
-    console.log(time)
+    
 
 
     const sec = Math.floor((time / 1000) % 60);
     const min = Math.floor((time / (1000 * 60))%60);
-    const min = Math.floor((time / (1000 * 60))%60);
-        if (sec == 0){
+    const hour = Math.floor((time / (1000 * 3600))%60);
+    const day = Math.floor((time / (1000 * 86400))%24);
+
             spanM.textContent = min;
-        }
-        if (min == 0){
             spanH.textContent = hour;
-        }
+            spanD.textContent = day;
+
     spanS.textContent = sec;
+    // console.log(sec)
 }, 1000)
