@@ -14,8 +14,8 @@ setInterval(()=>{
 
     const sec = Math.floor((time / 1000) % 60);
     const min = Math.floor((time / (1000 * 60))%60);
-    const hour = Math.floor((time / (1000 * 3600))%60);
-    const day = Math.floor((time / (1000 * 86400))%24);
+    const hour = Math.floor((time / (1000 * 3600))%24);
+    const day = Math.floor((time / (1000 * 86400))%31);
 
             spanM.textContent = min;
             spanH.textContent = hour;
